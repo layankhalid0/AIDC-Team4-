@@ -1,6 +1,6 @@
 # The wk2 container, as a single pod. This file is given complete on day 1;
 # from tomorrow you write the YAML yourself.
-apiVersion: v1
+apiVersion: v1 
 kind: Pod
 metadata:
   name: serving
