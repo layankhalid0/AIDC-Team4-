@@ -1,4 +1,4 @@
-# W4D1 - Deployment Verification (`remas` Namespace)
+# W4D1 - Deployment Verification (`remas` Namespace) 
 
 This directory contains the deployment configuration and verification files for **W4D1** executed under the `remas` namespace using port `8000`.
 
