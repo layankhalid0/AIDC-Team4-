@@ -1,0 +1,1 @@
+{"cluster": "pod:aidc-t10", "namespace": "amal", "pod": "serving", "image": "amalk54/aidc-serving:cpu-v1", "node": "aidc-t10", "chat_status": 200}
