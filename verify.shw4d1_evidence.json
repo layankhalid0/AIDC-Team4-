@@ -1,0 +1,2 @@
+{"cluster": "k3s", "pod": "serving", "image": "remaswahas/aidc-serving:cpu-v1", "node": "aidc-t10", "chat_status": 200}
+ 
