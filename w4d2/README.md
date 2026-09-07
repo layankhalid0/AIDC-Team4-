@@ -19,8 +19,7 @@ Everything has been successfully deployed, configured, and verified locally.
 
 > **Note:** Here is the proof of the successful verification showing the green check pass:
 
-![Green Check Pass Verification]<img width="1066" height="162" alt="Screenshot 2026-09-07 141827" src="https://github.com/user-attachments/assets/f471403d-872c-40fe-b639-19310720d8b8" />
-
+<img src="https://github.com/user-attachments/assets/dc054067-1292-4612-abbc-cba2b89a8758" alt="Green Check Pass" width="100%">
 
 ---
 *Developed with dedication and precision.*
