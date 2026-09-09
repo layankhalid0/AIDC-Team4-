@@ -17,8 +17,6 @@ The objective of this phase is to deploy the team serving service using Helm cha
 1. **Navigate to the Directory:**
    ```bash
    cd d4
-   
-
 2. **Deploy the Helm Release:**
    Ensure the Helm release is named `team` and deployed inside the `team` namespace to satisfy the test requirements:
    ```bash
