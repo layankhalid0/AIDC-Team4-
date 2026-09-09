@@ -1,6 +1,6 @@
 
 # Team Serving Deployment (W4D4) - Team 4
-
+ 
 This repository contains the deployment configurations and validation scripts for the team serving application (`W4D4`), optimized and stabilized for Kubernetes cluster execution.
 
 ## 🚀 Overview
