@@ -1,0 +1,21 @@
+apiKey: ''
+apiKeySecret: ''
+backend: echo
+hpa:
+  enabled: true
+  maxReplicas: 3
+  minReplicas: 1
+  scaleDownStabilizationSeconds: 60
+  targetCPUPercent: 50
+image: amalk54/aidc-serving:cpu-v3
+modelId: Qwen/Qwen2.5-0.5B-Instruct
+replicas: 1
+resources:
+  limits:
+    cpu: '1'
+    memory: 2Gi
+  requests:
+    cpu: 250m
+    memory: 512Mi
+service:
+  type: ClusterIP
