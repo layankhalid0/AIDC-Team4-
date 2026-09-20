@@ -1,0 +1,103 @@
+{
+  "model": "Qwen/Qwen3-8B",
+  "serving_framework": "vLLM",
+  "gpu": "NVIDIA RTX A6000 48GB",
+  "max_model_len": 4096,
+  "temperature": 0.2,
+  "reasoning_mode": "no_think",
+  "tests": [
+    {
+      "id": 1,
+      "level": "basic",
+      "title": "English grammar correction",
+      "task": "Correct the English sentence, explain the error in Arabic, and provide two correct examples.",
+      "input": "Yesterday I go to the market.",
+      "expected_correction": "Yesterday I went to the market.",
+      "result": {
+        "correction": "Yesterday I went to the market.",
+        "arabic_explanation": true,
+        "examples_provided": true
+      },
+      "assessment": {
+        "english_correction": "pass",
+        "arabic_explanation": "pass",
+        "examples": "pass",
+        "response_completion": "pass"
+      },
+      "metrics": {
+        "finish_reason": "stop",
+        "prompt_tokens": 56,
+        "completion_tokens": 338,
+        "total_tokens": 394
+      },
+      "notes": "The model correctly identified the past-tense error, explained the correction in Arabic, and provided two correct examples."
+    },
+    {
+      "id": 2,
+      "level": "intermediate",
+      "title": "Arabic-English code-switching correction",
+      "task": "Correct the English errors in a mixed Arabic-English sentence and explain the corrections in Arabic.",
+      "input": "Yesterday I was going to الجامعة, but I forget my book at home.",
+      "expected_corrections": [
+        "الجامعة -> the university",
+        "forget -> forgot"
+      ],
+      "result": {
+        "correction": "Yesterday I was going to the university, but I forgot my book at home.",
+        "arabic_explanation": true
+      },
+      "assessment": {
+        "code_switching_understanding": "pass",
+        "error_detection": "pass",
+        "correction_accuracy": "pass",
+        "arabic_explanation": "needs_review",
+        "response_completion": "needs_review"
+      },
+      "issues": [
+        "The Arabic explanation contained an unexpected Chinese character: م冠",
+        "The captured response appeared incomplete"
+      ],
+      "metrics": {
+        "finish_reason": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "notes": "The model understood the mixed Arabic-English input and corrected the English errors, but the Arabic explanation showed a language-quality issue and the captured response appeared incomplete."
+    },
+    {
+      "id": 3,
+      "level": "advanced",
+      "title": "Natural bilingual tutoring conversation",
+      "task": "Act as an English tutor, understand the mixed Arabic-English message, identify English mistakes, explain corrections in Arabic, respond naturally, and provide encouraging advice.",
+      "input": "أنا اليوم كنت في الجامعة and I had a presentation. بصراحة I was very nervous because I did not practice enough. بعدين my friend told me to relax, but I still make many mistakes while I was speaking. What do you think I should do next time?",
+      "result": {
+        "english_error_detected": "make -> made",
+        "arabic_explanation": true,
+        "tutor_advice": true,
+        "encouraging_tone": true
+      },
+      "assessment": {
+        "bilingual_understanding": "pass",
+        "english_error_detection": "pass",
+        "correction_accuracy": "pass",
+        "arabic_explanation": "pass",
+        "natural_tutor_behavior": "needs_review",
+        "code_switching_handling": "needs_review",
+        "encouraging_tone": "pass",
+        "response_completion": "fail"
+      },
+      "issues": [
+        "The model incorrectly treated natural Arabic-English code-switching as a problem and suggested using only one language.",
+        "The response reached the maximum output token limit and was truncated."
+      ],
+      "metrics": {
+        "finish_reason": "length",
+        "prompt_tokens": 103,
+        "completion_tokens": 512,
+        "total_tokens": 615
+      },
+      "notes": "The model demonstrated good bilingual understanding and English correction ability, but it did not fully align with the intended code-switching use case and the response was truncated."
+    }
+  ]
+}

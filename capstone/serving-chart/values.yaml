@@ -1,0 +1,29 @@
+image: aidcteam4/capstone-qwen3-8b-awq:v1
+
+replicas: 0
+
+apiKey: ''
+apiKeySecret: ''
+
+backend: vllm
+modelId: Qwen/Qwen3-8B-AWQ
+
+resources:
+  requests:
+    cpu: "4"
+    memory: 16Gi
+    nvidia.com/gpu: 1
+  limits:
+    cpu: "4"
+    memory: 16Gi
+    nvidia.com/gpu: 1
+
+hpa:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 1
+  targetCPUPercent: 50
+  scaleDownStabilizationSeconds: 60
+
+service:
+  type: ClusterIP

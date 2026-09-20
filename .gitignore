@@ -1,0 +1,16 @@
+# Ignore everything in ~/aidc by default
+/*
+# Keep this gitignore
+!/.gitignore
+# Keep the capstone project
+!/capstone/
+!/capstone/**
+
+# Do not upload local environments, caches, models, or secrets
+/capstone/mistral-quant-env/
+/capstone/models/
+/capstone/.cache/
+/capstone/**/__pycache__/
+/capstone/**/*.pyc
+/capstone/.env
+/capstone/**/.env
