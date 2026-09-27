@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Language Coach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Language Coach home">
+        <span class="brand-mark">L</span>
+        <span><strong>Language Coach</strong><small>learn · practice · grow</small></span>
+      </a>
+
+      <section class="setup-block">
+        <p class="eyebrow">YOUR LEVEL</p>
+        <div class="level-grid" id="levelGrid">
+          <button class="level active" data-level="A1"><b>A1</b><span>Beginner</span></button>
+          <button class="level" data-level="A2"><b>A2</b><span>Elementary</span></button>
+          <button class="level" data-level="A3"><b>A3</b><span>Intermediate</span></button>
+        </div>
+      </section>
+
+      <section class="setup-block">
+        <p class="eyebrow">PRACTICE TODAY</p>
+        <div class="topic-select-wrap">
+          <select class="topic-select" id="topicSelect" aria-label="Practice topic">
+            <option value="Daily routine">Daily routine</option>
+            <option value="Travel">Travel</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Work & study">Work &amp; study</option>
+            <option value="Free conversation">Free conversation</option>
+          </select>
+          <span class="select-arrow">⌄</span>
+        </div>
+      </section>
+
+      <div class="sidebar-bottom">
+        <div class="model-card">
+          <div class="status-line"><span class="live-dot"></span><span>Qwen ready</span></div>
+        </div>
+        <button class="new-chat" id="newChat">＋ New session</button>
+      </div>
+    </aside>
+
+    <section class="workspace">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">ARABIC LANGUAGE COACH</p>
+          <h1>Practice without <em>pressure.</em></h1>
+        </div>
+        <div class="session-pill"><span id="levelPill">A1</span><i></i><span id="topicPill">Daily routine</span></div>
+      </header>
+
+      <div class="flow-wrap">
+        <div class="flow-head"><span>Lesson flow</span><strong id="flowName">Question</strong></div>
+        <div class="flow-track" id="flowTrack">
+          <div class="flow-step active"><span>1</span><b>Question</b></div>
+          <div class="line"></div>
+          <div class="flow-step"><span>2</span><b>Answer</b></div>
+          <div class="line"></div>
+          <div class="flow-step"><span>3</span><b>Follow-up</b></div>
+          <div class="line"></div>
+          <div class="flow-step"><span>4</span><b>Correction</b></div>
+        </div>
+      </div>
+
+      <section class="chat-card">
+        <div class="chat-top">
+          <div class="coach-id"><div class="avatar">L</div><div><b>Language Coach</b><span><i></i> online</span></div></div>
+          <div class="turns"><span id="turnCount">0</span> turns</div>
+        </div>
+
+        <div class="messages" id="messages" aria-live="polite"></div>
+
+        <div class="thinking hidden" id="thinking"><span></span><span></span><span></span><small>Coach is thinking</small></div>
+
+        <div class="coach-focus" id="coachFocus">
+          <span class="spark">✦</span>
+          <div><b>Coach focus</b><p>Answer naturally. You’re here to practice, build confidence, and improve one step at a time.</p></div>
+        </div>
+
+        <form class="composer" id="composer">
+          <textarea id="messageInput" rows="1" placeholder="Type your answer here…" aria-label="Your answer"></textarea>
+          <button type="submit" id="sendButton" aria-label="Send">↑</button>
+        </form>
+      </section>
+    </section>
+  </main>
+  <script src="script.js?v=2"></script>
+</body>
+</html>
