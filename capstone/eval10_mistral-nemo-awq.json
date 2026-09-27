@@ -1,0 +1,110 @@
+{
+  "model": "casperhansen/mistral-nemo-instruct-2407-awq",
+  "model_label": "mistral-nemo-awq",
+  "temperature": 0.2,
+  "max_tokens": 300,
+  "system_prompt": "You are an Arabic language coach.\nFollow the user's instructions exactly.\nPreserve the learner's intended meaning when correcting sentences.\nUse the requested explanation language exactly.\nKeep explanations short, simple, and factually accurate.\nDo not add unrelated grammar rules.",
+  "timestamp": "2026-09-21T11:54:00.047848",
+  "results": [
+    {
+      "prompt_id": 1,
+      "prompt": "صحح الجملة التالية، ثم اشرح الخطأ باختصار وبأسلوب مناسب لمتعلم مبتدئ: هي يذهب إلى المدرسة كل يوم.",
+      "response": "The sentence is: \"She goes to school every day.\"\n\nExplanation: The verb \"goes\" is in the third person singular present tense, which is used for \"she\" in English. The phrase \"to school\" is a prepositional phrase that indicates the destination. \"Every day\" is an adverbial phrase that modifies the verb \"goes,\" indicating the frequency of the action.",
+      "latency_seconds": 1.035,
+      "prompt_tokens": 83,
+      "completion_tokens": 83,
+      "total_tokens": 166,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 2,
+      "prompt": "صحح الجملة التالية مع الحفاظ على المعنى المقصود، ثم اشرح الخطأ باختصار: أنا أكلت الماء لأنني عطشان.",
+      "response": "The corrected sentence is: \"أنا شربت الماء لأنني عطشان.\"\n\nExplanation: The verb \"أكلت\" (ate) should be replaced with \"شربت\" (drank) because water is typically consumed by drinking, not eating.",
+      "latency_seconds": 0.6311,
+      "prompt_tokens": 83,
+      "completion_tokens": 52,
+      "total_tokens": 135,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 3,
+      "prompt": "صحح الجملة التالية، ثم اشرح الخطأ باللغة الإنجليزية: نحن ذهبت إلى السوق أمس.",
+      "response": "**Correction:** \"went\" should be \"went\" (no change needed).\n\n**Explanation:** The sentence \"We went to the market yesterday\" is already correct in Arabic. The verb \"went\" is in the past tense, which is appropriate for the context.",
+      "latency_seconds": 0.6774,
+      "prompt_tokens": 73,
+      "completion_tokens": 56,
+      "total_tokens": 129,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 4,
+      "prompt": "صحح الجملة التالية، ثم أعطِ تفسيراً بسيطاً لمتعلم مبتدئ: هذه كتاب جديد.",
+      "response": "**Correction:** This is a new book.\n\n**Explanation:** \"هذ\" (haz) is the demonstrative pronoun for \"this\" in Arabic, and \"كتاب\" (kitāb) is the word for \"book\". \"جديد\" (jadīd) means \"new\".",
+      "latency_seconds": 0.7943,
+      "prompt_tokens": 77,
+      "completion_tokens": 66,
+      "total_tokens": 143,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 5,
+      "prompt": "Correct the following sentence, then explain the mistake in Arabic: She go to university every day.",
+      "response": "**Corrected Sentence:** \"She goes to university every day.\"\n\n**Explanation in Arabic:** \"الخطأ في الجملة هو في \"go\" وليس \"goes\". \"Go\" هو في صيغة المضارع، ولكن \"she\" هو في صيغة المفرد. لذلك، يجب أن يكون \"go\" في صيغة المفرد أيضاً، أي \"goes\".\"",
+      "latency_seconds": 0.9717,
+      "prompt_tokens": 72,
+      "completion_tokens": 81,
+      "total_tokens": 153,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 6,
+      "prompt": "Correct the following sentence, then explain the mistake in Arabic: They was happy yesterday.",
+      "response": "**Corrected Sentence:** They were happy yesterday.\n\n**Explanation in Arabic:** \"They\" is a plural subject, so the verb should also be plural. In English, the plural form of \"to be\" is \"were\", not \"was\".",
+      "latency_seconds": 0.6499,
+      "prompt_tokens": 70,
+      "completion_tokens": 54,
+      "total_tokens": 124,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 7,
+      "prompt": "ترجم الجملة التالية إلى الإنجليزية ترجمة طبيعية: أنا أتعلم العربية لأنني أريد التحدث مع أصدقائي.",
+      "response": "**Translation:** \"I am learning Arabic because I want to speak with my friends.\"\n\n**Explanation:** The sentence is in the present continuous tense (\"I am learning\") to indicate a current ongoing action. \"أريد\" (I want) is used to express desire, and \"لتتحدث\" (to speak) is the infinitive form of the verb \"to speak\".",
+      "latency_seconds": 0.9371,
+      "prompt_tokens": 77,
+      "completion_tokens": 78,
+      "total_tokens": 155,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 8,
+      "prompt": "ترجم إلى العربية ترجمة طبيعية مناسبة للمحادثة اليومية: I usually drink coffee in the morning, but today I drank tea.",
+      "response": "**Translation:** \"أستعملُ القهوةَ في الصباح، ولكنَ اليومَ شَرَبتُ الشايَ.\"\n\n**Explanation:** \"استعمل\" is the past tense of \"أستعمل\" (to use), \"الصبح\" means \"morning\", \"ولكن\" means \"but\", and \"شربت\" is the past tense of \"شرب\" (to drink).",
+      "latency_seconds": 0.9837,
+      "prompt_tokens": 79,
+      "completion_tokens": 82,
+      "total_tokens": 161,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 9,
+      "prompt": "أنا متعلم مبتدئ للغة العربية. أريد أن أطلب قهوة بدون سكر في مقهى. علمني جملة عربية طبيعية أستطيع قولها، ثم اشرحها باختصار باللغة الإنجليزية.",
+      "response": "You can say: \"أريد قهوة بلا سكر في المقهى.\"\n\nThis means: \"I want coffee without sugar at the café.\"",
+      "latency_seconds": 0.3709,
+      "prompt_tokens": 94,
+      "completion_tokens": 30,
+      "total_tokens": 124,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 10,
+      "prompt": "أنا متعلم للغة العربية. قلت لصديقي: \"أنا سوف ذهبت إلى المطعم غداً.\" صحح ما قلته، واشرح لي بالعربية بطريقة بسيطة لماذا هو خطأ.",
+      "response": "You said: \"أنا سوف ذهبت إلى المطعم غداً.\"\n\nCorrection: \"أنا سأذهب إلى المطعم غداً.\"\n\nExplanation: The past tense of \"أذهب\" (go) is \"ذهبت\", not \"ذهبت\".",
+      "latency_seconds": 0.6422,
+      "prompt_tokens": 93,
+      "completion_tokens": 53,
+      "total_tokens": 146,
+      "finish_reason": "stop"
+    }
+  ]
+}

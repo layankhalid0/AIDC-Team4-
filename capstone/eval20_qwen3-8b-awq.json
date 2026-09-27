@@ -1,0 +1,210 @@
+{
+  "model": "Qwen/Qwen3-8B-AWQ",
+  "model_label": "qwen3-8b-awq",
+  "temperature": 0.2,
+  "max_tokens": 300,
+  "system_prompt": "You are an Arabic language coach.\nFollow the user's instructions exactly.\nPreserve the learner's intended meaning when correcting sentences.\nUse the requested explanation language exactly.\nKeep explanations short, simple, and factually accurate.\nDo not add unrelated grammar rules.",
+  "timestamp": "2026-09-21T13:13:41.473627",
+  "results": [
+    {
+      "prompt_id": 1,
+      "prompt": "صحح الجملة التالية، ثم اشرح الخطأ بالعربية بجملة واحدة فقط: أنا يذهب إلى الجامعة كل يوم.",
+      "response": "الصيغة الصحيحة: أنا أذهب إلى الجامعة كل يوم.\n\nالخطأ: الفعل \"يذهب\" غير صحيح في الصيغة، يجب أن يكون \"أذهب\" لتصحيح التصريف.",
+      "latency_seconds": 0.4756,
+      "prompt_tokens": 97,
+      "completion_tokens": 48,
+      "total_tokens": 145,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 2,
+      "prompt": "صحح الجملة التالية مع الحفاظ على المعنى المقصود: البنت صغير وجميل.",
+      "response": "البنت صغيرة وجميلة.\n\n**الشرح:**  \nالكلمة \"صغير\" تُستخدم عادةً للوصف الأكبر سنًا، لذا تم استبدالها بـ\"صغيرة\" لتناسب وصف الفتاة.",
+      "latency_seconds": 0.505,
+      "prompt_tokens": 93,
+      "completion_tokens": 56,
+      "total_tokens": 149,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 3,
+      "prompt": "صحح الجملة التالية، ثم اشرح الخطأ باللغة الإنجليزية باختصار: هذا سيارة جديدة.",
+      "response": "الجملة الصحيحة: **هذه سيارة جديدة.**\n\n**الشرح:**  \nالكلمة \"هذا\" تُستخدم للإشارة إلى شيء **ذكر** (ذكر = مذكر)، بينما \"سيارة\" هي اسم مذكر.  \nلكن في الجملة الأصلية، تم استخدام \"هذا\" مع \"سيارة\" (اسم مؤنث)، مما يُعتبر خطأ في التوافق بين الجنس.  \nلذلك، يجب استخدام \"هذه\" (مؤنث) مع \"سيارة\" (مؤنث).",
+      "latency_seconds": 1.033,
+      "prompt_tokens": 97,
+      "completion_tokens": 116,
+      "total_tokens": 213,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 4,
+      "prompt": "صحح الجملة التالية دون تغيير معناها، ثم اشرح الخطأ بالعربية: نحن سافر إلى جدة الأسبوع الماضي.",
+      "response": "**الجملة المصححة:**  \nنحن سافرنا إلى جدة الأسبوع الماضي.\n\n**الشرح:**  \nالخطأ في الجملة الأصلية هو في استخدام الفعل \"سافر\" بدون فاعل. الفعل \"سافر\" هو فعل مبني، ويتطلب فاعلاً. في الجملة الأصلية، الفاعل هو \"نحن\"، لذا يجب أن يكون الفعل مبنياً على الفاعل، أي \"سافرنا\".",
+      "latency_seconds": 0.9631,
+      "prompt_tokens": 102,
+      "completion_tokens": 108,
+      "total_tokens": 210,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 5,
+      "prompt": "صحح الجملة التالية، ثم اشرح الخطأ باختصار: أختي يحب قراءة الكتب قبل النوم.",
+      "response": "**الجملة الصحيحة:**  \nأختي تحب قراءة الكتب قبل النوم.\n\n**الخطأ:**  \nالكلمة \"يحب\" غير صحيحة في هذا السياق لأنها تُستخدم فقط للذكور.  \nالصيغة الصحيحة للإناث هي \"تحب\".\n\n**التوضيح:**  \nفي اللغة العربية، تختلف صيغ الفعل حسب الجنس.  \n- \"يحب\" → للذكور  \n- \"تحب\" → للإناث",
+      "latency_seconds": 0.9904,
+      "prompt_tokens": 98,
+      "completion_tokens": 111,
+      "total_tokens": 209,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 6,
+      "prompt": "صحح الجملة التالية مع الحفاظ على الزمن والمعنى، ثم اشرح سبب التصحيح: عندما وصلت إلى المحطة، القطار يغادر بالفعل.",
+      "response": "**الجملة المصححة:**  \nعندما وصلت إلى المحطة، كان القطار يغادر بالفعل.\n\n**الشرح:**  \nالجملة الأصلية تحتوي على خطأ في استخدام الزمن. الفعل \"وصلت\" هو في الماضي، لذا يجب أن يكون الفعل المصاحب \"يغادر\" أيضًا في الماضي، وليس في الزمن المضارع. لذلك تم تغيير \"يغادر\" إلى \"كان يغادر\" لاستخدام الزمن الماضي المتصالح (الماضي المتصالح)، وهو الزمن المناسب لوصف حدث كان يحدث في الماضي وتم التأكد منه.",
+      "latency_seconds": 1.2378,
+      "prompt_tokens": 109,
+      "completion_tokens": 139,
+      "total_tokens": 248,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 7,
+      "prompt": "Correct the sentence, then explain the mistake briefly in English: My brother play football every weekend.",
+      "response": "**Corrected sentence:** My brother plays football every weekend.\n\n**Explanation:** The verb \"play\" should be in the third person singular form \"plays\" to match the subject \"my brother.\"",
+      "latency_seconds": 0.3643,
+      "prompt_tokens": 86,
+      "completion_tokens": 40,
+      "total_tokens": 126,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 8,
+      "prompt": "Correct the sentence, then explain the mistake in Arabic: I have seen him yesterday.",
+      "response": "**Corrected sentence:**  \nأنا رأيتُه بالأمس.\n\n**Explanation in Arabic:**  \nالخطأ في الجملة الأصلية هو في استخدام الفعل \"رأيتُه\" مع \"الأمس\". الفعل \"رأيتُه\" يُستخدم مع \"في الماضي\" فقط، لكن \"الأمس\" يُستخدم مع الفعل الماضي، لذلك يجب أن تكون الجملة: \"أنا رأيتُه بالأمس\" أو \"أنا رأيتُه في الماضي\".",
+      "latency_seconds": 0.9806,
+      "prompt_tokens": 84,
+      "completion_tokens": 110,
+      "total_tokens": 194,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 9,
+      "prompt": "Correct the sentence without changing its intended meaning, then explain the mistake briefly in English: If I knew about the meeting yesterday, I would have attended it.",
+      "response": "**Corrected sentence:**  \nIf I had known about the meeting yesterday, I would have attended it.\n\n**Explanation:**  \nThe mistake is in the use of \"knew\" instead of \"had known.\" The sentence is in the past conditional, so it requires the past perfect tense (\"had known\") to show that the knowledge came before the past action (attending the meeting).",
+      "latency_seconds": 0.7016,
+      "prompt_tokens": 98,
+      "completion_tokens": 78,
+      "total_tokens": 176,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 10,
+      "prompt": "ترجم إلى الإنجليزية ترجمة طبيعية: أريد كوباً من الماء من فضلك.",
+      "response": "Natural translation: I would like a glass of water, please.\n\nExplanation: The sentence is polite and uses \"please\" at the end, which is common in Arabic to show respect. The structure \"أريد\" means \"I would like,\" and \"كوباً من الماء\" means \"a glass of water.\"",
+      "latency_seconds": 0.5941,
+      "prompt_tokens": 95,
+      "completion_tokens": 66,
+      "total_tokens": 161,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 11,
+      "prompt": "ترجم إلى الإنجليزية ترجمة طبيعية دون إضافة أي شرح: لم أذهب إلى العمل اليوم لأنني كنت متعباً.",
+      "response": "I didn't go to work today because I was tired.",
+      "latency_seconds": 0.1268,
+      "prompt_tokens": 103,
+      "completion_tokens": 13,
+      "total_tokens": 116,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 12,
+      "prompt": "ترجم إلى الإنجليزية مع الحفاظ على المعنى والنبرة: على الرغم من أن الرحلة كانت طويلة، فإنني استمتعت بكل لحظة فيها.",
+      "response": "Although the trip was long, I enjoyed every moment of it.  \n\n**Explanation:**  \n- \"على الرغم من أن\" = \"Although\"  \n- \"الرحلة كانت طويلة\" = \"the trip was long\"  \n- \"استمتعت بكل لحظة فيها\" = \"I enjoyed every moment of it\"  \n- The sentence structure is kept natural in English while preserving the original meaning and tone.",
+      "latency_seconds": 0.7713,
+      "prompt_tokens": 106,
+      "completion_tokens": 86,
+      "total_tokens": 192,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 13,
+      "prompt": "ترجم إلى العربية ترجمة طبيعية مناسبة لمتعلم مبتدئ: Where is the nearest bus station?",
+      "response": "أين أقرب محطة الحافلات؟\n\n**التفسير:**  \nالجملة تُسأل عن مكان محطة الحافلات القريبة.  \n\"أين\" تعني \"أين هو مكان\".  \n\"أقرب\" يعني \"الأقرب\" أي الأكثر قربًا.  \n\"محطة الحافلات\" هي المكان الذي تتوقف فيه الحافلات.",
+      "latency_seconds": 0.7376,
+      "prompt_tokens": 94,
+      "completion_tokens": 82,
+      "total_tokens": 176,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 14,
+      "prompt": "ترجم إلى العربية ترجمة طبيعية: I have been studying Arabic for six months, but speaking is still difficult for me.",
+      "response": "لقد درست اللغة العربية لمدة ستة أشهر، لكن التحدث لا يزال صعبًا بالنسبة لي.",
+      "latency_seconds": 0.2231,
+      "prompt_tokens": 95,
+      "completion_tokens": 24,
+      "total_tokens": 119,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 15,
+      "prompt": "أنا متعلم مبتدئ للعربية وأريد أن أسأل موظف المطعم عن سعر الوجبة. أعطني جملة عربية طبيعية واحدة فقط أستطيع قولها.",
+      "response": "ما سعر الوجبة؟",
+      "latency_seconds": 0.0861,
+      "prompt_tokens": 112,
+      "completion_tokens": 8,
+      "total_tokens": 120,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 16,
+      "prompt": "You are helping me practice Arabic. I want to politely ask someone for directions to the train station. Give me one natural Arabic sentence, then explain it briefly in English.",
+      "response": "**السَّلامُ عَلَيْكُمْ، أَرَدْتُ أَسْأَلَكُمْ عَنْ طَرِيقِ سَكَكِ الحَدِيدِ.**  \n*Hello, I would like to ask you about the way to the train station.*  \n\nThis sentence is polite and commonly used to ask for directions in Arabic. It starts with a greeting, then clearly states the request.",
+      "latency_seconds": 0.967,
+      "prompt_tokens": 101,
+      "completion_tokens": 108,
+      "total_tokens": 209,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 17,
+      "prompt": "أنا في متجر وأريد أن أقول للبائع إن المقاس صغير وأريد مقاساً أكبر. أعطني ما أقوله بالعربية بشكل طبيعي، دون شرح.",
+      "response": "بالطبع، إليك الجملة بالعربية بشكل طبيعي:\n\n**\"المقاس صغير، وأريد مقاساً أكبر.\"**",
+      "latency_seconds": 0.2971,
+      "prompt_tokens": 109,
+      "completion_tokens": 32,
+      "total_tokens": 141,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 18,
+      "prompt": "اشرح باللغة الإنجليزية وباختصار الفرق في المعنى بين: \"كنت أدرس العربية\" و\"درست العربية\".",
+      "response": "\"كنت أدرس العربية\" يعني أنك كنت تدرس اللغة العربية في الماضي، وربما ما زلت تدرسها أو تدرسها بشكل مستمر.  \n\"درست العربية\" يعني أنك تعلمت اللغة العربية في الماضي، وربما لا تدرسها الآن.  \n\nالفرق هو أن \"كنت أدرس\" يدل على فعل مستمر في الماضي، بينما \"درست\" يدل على فعل انتهى.",
+      "latency_seconds": 0.8673,
+      "prompt_tokens": 101,
+      "completion_tokens": 95,
+      "total_tokens": 196,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 19,
+      "prompt": "Explain in simple Arabic the difference between \"I used to work here\" and \"I am used to working here.\" Give one short example for each.",
+      "response": "**الفرق بين الجملتين:**\n\n1. **\"كنت أعمل هنا\"**  \n   - هذا الجملة تقول أنك **عملت في مكان ما في الماضي**، وربما لم تعد تعمل هناك الآن.  \n   - مثال: *كنت أعمل هنا قبل أن أنتقل للعمل في شركة أخرى.*  \n   - (I used to work here.)\n\n2. **\"أعتاد على العمل هنا\"**  \n   - هذا الجملة تقول أنك **أصبحت معتادًا على العمل في هذا المكان**، وربما تزال تعمل هناك الآن.  \n   - مثال: *أعتاد على العمل هنا منذ سنوات.*  \n   - (I am used to working here.)",
+      "latency_seconds": 1.4093,
+      "prompt_tokens": 98,
+      "completion_tokens": 158,
+      "total_tokens": 256,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 20,
+      "prompt": "صحح الجملة التالية: \"هم يدرس اللغة العربية كل يوم.\" أجب بجملتين فقط: الجملة الأولى للتصحيح، والجملة الثانية لشرح الخطأ باللغة الإنجليزية.",
+      "response": "هم يدرسون اللغة العربية كل يوم.  \nالخطأ في استخدام الفعل \"يدرس\" بدلًا من \"يدرسون\" لأن الفاعل \"هم\" مجمع ويتطلب الجمع.",
+      "latency_seconds": 0.4036,
+      "prompt_tokens": 116,
+      "completion_tokens": 44,
+      "total_tokens": 160,
+      "finish_reason": "stop"
+    }
+  ]
+}

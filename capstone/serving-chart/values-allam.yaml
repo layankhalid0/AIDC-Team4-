@@ -1,0 +1,29 @@
+image: aidcteam4/allam-7b:v1
+
+replicas: 0
+
+apiKey: ''
+apiKeySecret: ''
+
+backend: vllm
+modelId: humain-ai/ALLaM-7B-Instruct-preview
+
+resources:
+  requests:
+    cpu: "4"
+    memory: 16Gi
+    nvidia.com/gpu: 1
+  limits:
+    cpu: "4"
+    memory: 16Gi
+    nvidia.com/gpu: 1
+
+hpa:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 1
+  targetCPUPercent: 50
+  scaleDownStabilizationSeconds: 60
+
+service:
+  type: ClusterIP

@@ -1,0 +1,110 @@
+{
+  "model": "humain-ai/ALLaM-7B-Instruct-preview",
+  "model_label": "allam-7b",
+  "temperature": 0.2,
+  "max_tokens": 300,
+  "system_prompt": "You are an Arabic language coach.\nFollow the user's instructions exactly.\nPreserve the learner's intended meaning when correcting sentences.\nUse the requested explanation language exactly.\nKeep explanations short, simple, and factually accurate.\nDo not add unrelated grammar rules.",
+  "timestamp": "2026-09-21T11:30:49.145238",
+  "results": [
+    {
+      "prompt_id": 1,
+      "prompt": "صحح الجملة التالية، ثم اشرح الخطأ باختصار وبأسلوب مناسب لمتعلم مبتدئ: هي يذهب إلى المدرسة كل يوم.",
+      "response": " الجملة الصحيحة هي: هي تذهب إلى المدرسة كل يوم.\n\nالخطأ في استخدام الضمير المناسب. يجب استخدام \"هي\" للأنثى و\"هو\" للذكر في اللغة العربية. ",
+      "latency_seconds": 1.1655,
+      "prompt_tokens": 106,
+      "completion_tokens": 40,
+      "total_tokens": 146,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 2,
+      "prompt": "صحح الجملة التالية مع الحفاظ على المعنى المقصود، ثم اشرح الخطأ باختصار: أنا أكلت الماء لأنني عطشان.",
+      "response": " أنا شربت الماء لأنني عطشان.\n\nالخطأ: \"أكلت\" يجب أن تُستبدل بـ \"شربت\" لأن المعنى المقصود هو شرب الماء وليس أكله. ",
+      "latency_seconds": 0.8488,
+      "prompt_tokens": 104,
+      "completion_tokens": 40,
+      "total_tokens": 144,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 3,
+      "prompt": "صحح الجملة التالية، ثم اشرح الخطأ باللغة الإنجليزية: نحن ذهبت إلى السوق أمس.",
+      "response": " Corrected sentence: نحن ذهبنا إلى السوق أمس.\n\nExplanation: The correct form is \"ذهبنا\" because the subject \"نحن\" (we) is plural and the verb \"ذهب\" (to go) should agree in form with the subject. ",
+      "latency_seconds": 1.1793,
+      "prompt_tokens": 98,
+      "completion_tokens": 56,
+      "total_tokens": 154,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 4,
+      "prompt": "صحح الجملة التالية، ثم أعطِ تفسيراً بسيطاً لمتعلم مبتدئ: هذه كتاب جديد.",
+      "response": " الجملة الصحيحة هي: \"هذا كتاب جديد.\"\n\nالتفسير: في اللغة العربية، يجب أن يتطابق الضمير مع الاسم الذي يشير إليه. هنا، الضمير \"هذا\" يشير إلى \"كتاب\"، لذا يجب أن يكون الاسم الذي يأتي بعده مفرداً مذكراً، وهو \"كتاب\". ",
+      "latency_seconds": 1.2425,
+      "prompt_tokens": 102,
+      "completion_tokens": 59,
+      "total_tokens": 161,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 5,
+      "prompt": "Correct the following sentence, then explain the mistake in Arabic: She go to university every day.",
+      "response": " الجملة الصحيحة: تذهب إلى الجامعة كل يوم.\n\nالملاحظة: يجب تغيير \"She go\" إلى \"تذهب\" لأن الفعل \"go\" يجب أن يُضاف إليه الضمير المناسب في اللغة العربية، و\"كل يوم\" يجب أن تُكتب \"كل يوم\" بدون اختصار. ",
+      "latency_seconds": 1.2411,
+      "prompt_tokens": 101,
+      "completion_tokens": 59,
+      "total_tokens": 160,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 6,
+      "prompt": "Correct the following sentence, then explain the mistake in Arabic: They was happy yesterday.",
+      "response": " الجملة الصحيحة: كانوا سعداء أمس.\n\nالملاحظة: يجب استخدام \"كانوا\" مع جمع المذكر السالم، و\"سعداء\" هي الصيغة الصحيحة لجمع المؤنث السالم. كلمة \"كان\" تُستخدم مع الضمائر المفردة، و\"يَ\" تُستخدم مع الأفعال المضارعة. ",
+      "latency_seconds": 1.2814,
+      "prompt_tokens": 99,
+      "completion_tokens": 61,
+      "total_tokens": 160,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 7,
+      "prompt": "ترجم الجملة التالية إلى الإنجليزية ترجمة طبيعية: أنا أتعلم العربية لأنني أريد التحدث مع أصدقائي.",
+      "response": " I am learning Arabic because I want to talk to my friends. \n\nExplanation: The sentence is translated directly, maintaining the original meaning and structure. ",
+      "latency_seconds": 0.746,
+      "prompt_tokens": 100,
+      "completion_tokens": 35,
+      "total_tokens": 135,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 8,
+      "prompt": "ترجم إلى العربية ترجمة طبيعية مناسبة للمحادثة اليومية: I usually drink coffee in the morning, but today I drank tea.",
+      "response": " عادة أشرب القهوة في الصباح، لكن اليوم شربت الشاي. ",
+      "latency_seconds": 0.3347,
+      "prompt_tokens": 107,
+      "completion_tokens": 15,
+      "total_tokens": 122,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 9,
+      "prompt": "أنا متعلم مبتدئ للغة العربية. أريد أن أطلب قهوة بدون سكر في مقهى. علمني جملة عربية طبيعية أستطيع قولها، ثم اشرحها باختصار باللغة الإنجليزية.",
+      "response": " أنت تقول: \"أريد قهوة بدون سكر، لو سمحت.\"\n\n- أريد: فعل مضارع مرفوع، الفاعل ضمير مستتر تقديره \"أنا\".\n- قهوة: مفعول به منصوب.\n- بدون سكر: حال منصوب، \"بدون\" حرف جر، \"سكر\" اسم مجرور.\n- لو سمحت: جملة اعتراضية، \"لو\" حرف شرط غير جازم، و\"سمحت\" فعل ماض مبني على السكون، والتاء ضمير متصل في محل رفع فاعل.\n\nExplanation: The sentence is natural and easy to understand. ",
+      "latency_seconds": 2.3985,
+      "prompt_tokens": 112,
+      "completion_tokens": 115,
+      "total_tokens": 227,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 10,
+      "prompt": "أنا متعلم للغة العربية. قلت لصديقي: \"أنا سوف ذهبت إلى المطعم غداً.\" صحح ما قلته، واشرح لي بالعربية بطريقة بسيطة لماذا هو خطأ.",
+      "response": " الجملة التي قلتها هي: \"أنا سوف ذهبت إلى المطعم غداً.\"\n\nهذا خطأ. الجملة الصحيحة هي: \"أنا سأذهب إلى المطعم غدًا.\"\n\nالتفسير:\n- \"سوف\" تُستخدم للمستقبل، ولكن في اللغة العربية نستخدم \"سـ\" فقط.\n- \"ذهبت\" يجب أن تكون \"أذهب\" لأن الفعل مضارع.\n- \"غداً\" صحيحة. ",
+      "latency_seconds": 1.678,
+      "prompt_tokens": 114,
+      "completion_tokens": 80,
+      "total_tokens": 194,
+      "finish_reason": "stop"
+    }
+  ]
+}

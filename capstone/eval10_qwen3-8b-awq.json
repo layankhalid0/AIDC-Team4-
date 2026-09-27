@@ -1,0 +1,110 @@
+{
+  "model": "Qwen/Qwen3-8B-AWQ",
+  "model_label": "qwen3-8b-awq",
+  "temperature": 0.2,
+  "max_tokens": 300,
+  "system_prompt": "You are an Arabic language coach.\nFollow the user's instructions exactly.\nPreserve the learner's intended meaning when correcting sentences.\nUse the requested explanation language exactly.\nKeep explanations short, simple, and factually accurate.\nDo not add unrelated grammar rules.",
+  "timestamp": "2026-09-21T11:47:08.883770",
+  "results": [
+    {
+      "prompt_id": 1,
+      "prompt": "صحح الجملة التالية، ثم اشرح الخطأ باختصار وبأسلوب مناسب لمتعلم مبتدئ: هي يذهب إلى المدرسة كل يوم.",
+      "response": "**الجملة الصحيحة:**  \nإنه يذهب إلى المدرسة كل يوم.\n\n**الخطأ:**  \nالكلمة \"هي\" غير صحيحة في هذا السياق.  \nالكلمة \"هي\" تُستخدم لوصف شيء أو شخص محدد، مثل: \"هي مدرسة جميلة\".  \nلكن في الجملة المذكورة، نتحدث عن شخص (الطالب)، لذا يجب استخدام \"إنه\" لوصف الشخص الذكر.\n\n**الشرح:**  \nاستخدم \"إنه\" لوصف الشخص الذكر، و\"هي\" لوصف الشخص الأنثى أو الشيء.",
+      "latency_seconds": 1.2345,
+      "prompt_tokens": 104,
+      "completion_tokens": 134,
+      "total_tokens": 238,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 2,
+      "prompt": "صحح الجملة التالية مع الحفاظ على المعنى المقصود، ثم اشرح الخطأ باختصار: أنا أكلت الماء لأنني عطشان.",
+      "response": "**الجملة المصححة:**  \nأنا شربت الماء لأنني عطشان.\n\n**الشرح:**  \nالكلمة \"أكلت\" تُستخدم لوصف تناول الطعام، بينما \"شربت\" تُستخدم لوصف شرب السوائل مثل الماء. لذا، يجب استخدام \"شربت\" بدلًا من \"أكلت\" لوصف شرب الماء.",
+      "latency_seconds": 0.7982,
+      "prompt_tokens": 107,
+      "completion_tokens": 89,
+      "total_tokens": 196,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 3,
+      "prompt": "صحح الجملة التالية، ثم اشرح الخطأ باللغة الإنجليزية: نحن ذهبت إلى السوق أمس.",
+      "response": "الجملة الصحيحة: **ذهبنا إلى السوق أمس.**\n\n**الخطأ:**  \nالكلمة \"نحن\" تُستخدم كفاعل، لكنها لا تُستخدم في الجملة المُضارعة (الماضي) بنفس الطريقة. في اللغة العربية، الفعل المضارع يُستخدم مع الفاعل، بينما في الماضي، يُستخدم الفاعل مع الفعل الماضي.\n\n**التوضيح باللغة الإنجليزية:**  \nThe word \"نحن\" (we) is used as a subject, but it should not be used with the past tense verb in this way. In Arabic, the subject is used with the present tense verb, while the past tense verb is used with the subject.",
+      "latency_seconds": 1.3961,
+      "prompt_tokens": 98,
+      "completion_tokens": 157,
+      "total_tokens": 255,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 4,
+      "prompt": "صحح الجملة التالية، ثم أعطِ تفسيراً بسيطاً لمتعلم مبتدئ: هذه كتاب جديد.",
+      "response": "**الجملة المصححة:** هذه كتاب جديد.  \n**الصيغة الصحيحة:** هذه كتاب جديد.  \n**التفسير:** الجملة صحيحة بالفعل. لكن في بعض الأحيان، يُفضل استخدام \"هذا\" بدلًا من \"هذه\" إذا كان الكتب مفردًا. لكن في هذه الحالة، \"كتاب\" هو مفرد، و\"هذه\" تُستخدم عندما يكون هناك أكثر من كتاب. إذا كنت تشير إلى كتاب واحد، يمكنك القول: \"هذا كتاب جديد.\"",
+      "latency_seconds": 1.052,
+      "prompt_tokens": 98,
+      "completion_tokens": 118,
+      "total_tokens": 216,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 5,
+      "prompt": "Correct the following sentence, then explain the mistake in Arabic: She go to university every day.",
+      "response": "**Corrected sentence:**  \nإذا ذهبت إلى الجامعة كل يوم.\n\n**Explanation in Arabic:**  \nالخطأ في الجملة هو استخدام الفعل \"go\" في الصورة غير المُorrectة. يجب استخدام الصيغة الصحيحة للفعل \"go\" في الماضي (went) أو المضارع (go) حسب السياق. في هذه الجملة، الفعل المضارع \"go\" غير صحيح، لأنه لا يُستخدم في الجملة الإنجليزية المُستخدمة في العربية. الفعل الصحيح هو \"go\" في المضارع، لكن في الجملة الإنجليزية، يجب استخدام \"go\" في المضارع أو الماضي حسب السياق. في هذه الحالة، الجملة الإنجليزية الصحيحة هي \"She goes to university every day.\" لكن في العربية، نستخدم \"ذهبت\" أو \"تذهب\" حسب السياق.",
+      "latency_seconds": 1.7653,
+      "prompt_tokens": 86,
+      "completion_tokens": 199,
+      "total_tokens": 285,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 6,
+      "prompt": "Correct the following sentence, then explain the mistake in Arabic: They was happy yesterday.",
+      "response": "**Corrected sentence:**  \n**They were happy yesterday.**\n\n**Explanation in Arabic:**  \nالخطأ هو في استخدام الفعل \"was\" بدلًا من \"were\". الفعل \"to be\" يُستخدم مع \"they\" بُدْلًا من \"he\" أو \"she\".  \nالصيغة الصحيحة لـ \"they\" هي \"were\" في الماضي.",
+      "latency_seconds": 0.7506,
+      "prompt_tokens": 84,
+      "completion_tokens": 84,
+      "total_tokens": 168,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 7,
+      "prompt": "ترجم الجملة التالية إلى الإنجليزية ترجمة طبيعية: أنا أتعلم العربية لأنني أريد التحدث مع أصدقائي.",
+      "response": "I am learning Arabic because I want to speak with my friends.\n\nExplanation:  \n\"أنا أتعلم العربية\" translates to \"I am learning Arabic.\"  \n\"لأنني أريد التحدث مع أصدقائي\" translates to \"because I want to speak with my friends.\"  \nThe sentence structure in Arabic is similar to English, so the translation is natural.",
+      "latency_seconds": 0.6752,
+      "prompt_tokens": 102,
+      "completion_tokens": 75,
+      "total_tokens": 177,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 8,
+      "prompt": "ترجم إلى العربية ترجمة طبيعية مناسبة للمحادثة اليومية: I usually drink coffee in the morning, but today I drank tea.",
+      "response": "عادة أشرب القهوة في الصباح، لكن اليوم شربت الشاي.",
+      "latency_seconds": 0.1913,
+      "prompt_tokens": 100,
+      "completion_tokens": 20,
+      "total_tokens": 120,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 9,
+      "prompt": "أنا متعلم مبتدئ للغة العربية. أريد أن أطلب قهوة بدون سكر في مقهى. علمني جملة عربية طبيعية أستطيع قولها، ثم اشرحها باختصار باللغة الإنجليزية.",
+      "response": "بالطبع! إليك الجملة:\n\n**\"أريد قهوة بدون سكر.\"**\n\n**الشرح باللغة الإنجليزية:**\n\nThis sentence means \"I want coffee without sugar.\" It is a simple and natural way to order coffee in an Arabic café.",
+      "latency_seconds": 0.55,
+      "prompt_tokens": 128,
+      "completion_tokens": 60,
+      "total_tokens": 188,
+      "finish_reason": "stop"
+    },
+    {
+      "prompt_id": 10,
+      "prompt": "أنا متعلم للغة العربية. قلت لصديقي: \"أنا سوف ذهبت إلى المطعم غداً.\" صحح ما قلته، واشرح لي بالعربية بطريقة بسيطة لماذا هو خطأ.",
+      "response": "الجملة التي قلتها:  \n**\"أنا سوف ذهبت إلى المطعم غداً.\"**  \nهي **خاطئة**.\n\n### الصيغة الصحيحة:\n**\"سأذهب إلى المطعم غداً.\"**  \nأو  \n**\"سوف أذهب إلى المطعم غداً.\"**\n\n### لماذا خطأ؟  \nفي الجملة الأصلية، تستخدمت **\"سوف\"** مع **\"ذهبت\"**، لكن **\"ذهبت\"** هي فعل ماضي، بينما **\"سوف\"** تستخدم مع فعل مرفوع (فعل ماضي أو فعل مرفوع بـ \"أن\" أو فعل مرفوع بـ \"سأ\" أو \"سوف\").\n\n### توضيح بسيط:\n- **\"سوف\"** تستخدم مع فعل مرفوع، مثل:  \n  - **سأذهب** (فعل مرفوع بـ \"سأ\")  \n  - **سوف أذهب** (فعل مرفوع بـ \"سوف\")  \n- **\"ذهبت\"** هي فعل ماضي، لذا لا تستخدم مع \"سوف\" مباشرة.\n\nإذا أردت أن تقول \"سوف أذهب\"، فهذا صحيح.",
+      "latency_seconds": 2.3301,
+      "prompt_tokens": 118,
+      "completion_tokens": 262,
+      "total_tokens": 380,
+      "finish_reason": "stop"
+    }
+  ]
+}
