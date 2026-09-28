@@ -25,7 +25,6 @@ const state = {
   goal: "",
   keyInformation: [],
   practicedPoints: [],
-  completedCategories: [],
   currentStep: ""
 }
 };
@@ -186,6 +185,27 @@ Do NOT move backward to an already completed learning point.
 Do NOT repeat a completed point using different wording.
 
 If currentStep is complete, do not invent another step just to continue the lesson. Help the learner combine, review, or naturally conclude what they practiced.
+
+COMPLETION RULE
+
+When SESSION MEMORY currentStep is "complete":
+
+- Do NOT introduce any new learning point.
+- Do NOT ask for more details just to make the answer longer.
+- Do NOT ask about another skill, project, training, interest, preference, or experience unless the learner explicitly requests more practice.
+
+If the learner has NOT yet combined the practiced points:
+- Ask them once to combine the practiced material into one final answer.
+- Use only information the learner actually provided.
+
+If the learner HAS already written the combined final answer:
+- Briefly confirm that the practice goal is complete.
+- Do NOT ask another practice question.
+- Do NOT offer another subtopic automatically.
+- Naturally conclude the exercise.
+
+For example:
+"ممتاز، كذا عندك مقدمة كاملة وواضحة للمقابلة. انتهينا من هذا التدريب."
 
 This rule applies to ALL learning topics and lesson types.
 
@@ -637,6 +657,37 @@ or explicitly stated in the recent conversation.
 // ================================
 // UPDATE SESSION MEMORY
 // ================================
+function markCurrentStepAsPracticed() {
+
+  const currentStep =
+    state.sessionMemory.currentStep?.trim();
+
+  if (
+    !currentStep ||
+    currentStep.toLowerCase() === "complete"
+  ) {
+    return;
+  }
+
+  const practicedPoints =
+    state.sessionMemory.practicedPoints || [];
+
+  const alreadyPracticed =
+    practicedPoints.some(
+      point =>
+        point.trim().toLowerCase() ===
+        currentStep.toLowerCase()
+    );
+
+  if (!alreadyPracticed) {
+
+    state.sessionMemory.practicedPoints = [
+      ...practicedPoints,
+      currentStep
+    ];
+
+  }
+}
 
 async function updateSessionMemory(messages) {
 
@@ -652,7 +703,6 @@ Return ONLY valid JSON using exactly this structure:
   "goal": "",
   "keyInformation": [],
   "practicedPoints": [],
-  "completedCategories": [],
   "currentStep": ""
 }
 
@@ -666,91 +716,181 @@ ${recentMessages
   .map(message => `${message.role}: ${message.content}`)
   .join("\n")}
 
-RULES:
+MEMORY RULES:
 
-Preserve all useful information already stored.
+1. Preserve useful information already stored in CURRENT MEMORY.
 
-Never invent personal information.
+2. Never delete previously learned information merely because
+it is not visible in RECENT CONVERSATION.
 
-"goal" is the learner's current practice goal.
+3. Never invent personal information.
 
-"keyInformation" contains only facts explicitly provided
+4. "goal" is the learner's current learning or conversation goal.
+
+5. "keyInformation" contains only information explicitly provided
 by the learner.
 
-"practicedPoints" contains short descriptions of things
-successfully practiced.
+Do not store information that came only from an example
+provided by the coach.
 
-For interview introduction practice, use ONLY these exact
-canonical values inside "completedCategories":
+6. "practicedPoints" contains distinct learning points the learner
+has already successfully practiced.
 
-"education"
-"experience"
-"training"
-"project"
-"skills"
-"professional_interest"
-"strength"
-"closing"
+Each practiced point must describe ONE clear learning purpose.
 
-Do NOT create variations of these names.
+Good examples:
+- "Introduce name and education"
+- "Describe work experience"
+- "Talk about a completed project"
+- "Describe a daily routine"
+- "Ask for a price"
 
-Examples:
+Avoid vague combined points such as:
+- "Practice more details"
+- "Talk about skills or experience"
+- "Continue practicing the topic"
 
-"My name is Leen, and I studied computer science."
-→ "education"
+7. The actual learning points depend on the learner's goal,
+topic, and conversation.
 
-"I have experience in AI."
-→ "experience"
+Do NOT use a fixed universal list of categories.
 
-"I completed training in AI."
-→ "training"
+8. Treat semantically overlapping points as the SAME learning area.
 
-"I worked on a project about financial problems."
-→ "project"
+Do not create a new step merely by making an existing point
+more specific, more detailed, or slightly reworded.
 
+For example, if the learner already practiced talking about
+their skills, do not create another step only for:
+- specific skills
+- technical skills
+- AI skills
+- modeling skills
+
+unless the learner explicitly asks to go deeper.
+
+9. Once a learning point has been successfully completed,
+preserve it in practicedPoints for the rest of the session.
+
+Do NOT remove it later.
+
+10. COMPLETING THE CURRENT STEP
+
+A currentStep represents ONE learning area, not a request to collect
+multiple examples from that area.
+
+As soon as the learner gives ONE successful answer that satisfies
+the currentStep, that ENTIRE learning area is completed.
+
+Add the completed currentStep to practicedPoints.
+
+Do NOT stay inside the same learning area to collect:
+- another example
+- another skill
+- another project
+- another experience
+- another training
+- another detail
+- a more specific version of the same information
+
+For example:
+
+If currentStep is about skills and the learner successfully says:
 "I have skills in AI models."
-→ "skills"
 
-Only add a category after the learner has successfully
-completed it.
+then the skills learning area is COMPLETE.
 
-If a correction or wording improvement is still waiting
-for a retry, do NOT mark that category complete.
+The next currentStep MUST NOT be:
+- another skill
+- programming skills
+- technical skills
+- AI skills
+- more skills
+- a more specific skill
 
-After a successful retry, the category can be completed.
+Move to a genuinely different learning point in the natural
+progression.
 
-Never remove a category that already exists in
-"completedCategories".
+The same principle applies to EVERY topic.
 
-Never return to a completed category unless the learner
-explicitly asks to practice it again.
+For example:
 
-For an interview introduction, use this order:
+Travel:
+If the learner successfully practices asking for a hotel room,
+do not ask them to practice another hotel room example unless
+the learner requests more practice.
 
-education
-→ experience
-→ training
-→ project
-→ skills
-→ professional_interest
-→ strength
-→ closing
+Shopping:
+If the learner successfully practices asking for a price,
+do not create another step for asking the price of a different item.
 
-"currentStep" must be the next incomplete category.
+Daily routine:
+If the learner successfully practices describing their morning
+routine, do not create another step only to collect another
+morning activity.
 
-For example, if completedCategories contains:
+A successful answer completes the learning PURPOSE of currentStep,
+not merely the exact sentence or fact the learner provided.
 
-["education", "experience", "training", "project", "skills"]
+If there is an unresolved correction or retry, the currentStep
+is NOT complete yet.
 
-then currentStep must NOT be education, experience,
-training, project, or skills.
+Once the learner successfully completes the correction,
+the entire currentStep learning area is completed.
 
-It should be:
+11. "currentStep" means ONE genuinely new and useful learning point
+needed to accomplish the learner's goal.
 
-"professional_interest"
+Choose it from:
+- the learner's goal
+- what has already been practiced
+- the recent conversation
+- the natural teaching progression
 
-Preserve older memory even when it is not visible in
-RECENT CONVERSATION.
+12. NEVER set currentStep to a point that is already covered,
+fully or substantially, by practicedPoints.
+
+Semantic overlap counts as repetition even when the wording
+or level of detail is different.
+
+13. Prefer a SHORT, goal-focused learning sequence.
+
+Do not keep expanding the lesson just because more related
+details could theoretically be practiced.
+
+Ask:
+"Does the learner already have enough practiced material
+to reasonably accomplish the original goal?"
+
+If YES, do not invent another learning point.
+
+14. When the original goal has been sufficiently practiced,
+set:
+
+"currentStep": "complete"
+
+For a narrow goal, reaching complete after a small number of
+useful distinct learning points is preferred over extending
+the lesson with increasingly specific subtopics.
+
+15. When currentStep is "complete", keep it "complete"
+unless the learner explicitly asks for:
+- another learning goal
+- more practice
+- deeper practice
+- a different topic
+
+Do NOT restart the previous sequence automatically.
+
+Before returning the JSON, silently verify:
+
+- Did I preserve previous learner information?
+- Did I preserve all previously practiced points?
+- Is currentStep genuinely new?
+- Am I accidentally repeating or moving backward?
+- Did I avoid inventing learner information?
+- Am I creating a new step that is really just a narrower version of something already practiced?
+- Has the learner already practiced enough to accomplish the original goal?
 
 Return JSON only.
 `.trim();
@@ -852,7 +992,9 @@ Return JSON only.
         }
 
         const normalized =
-          item.trim().toLowerCase();
+          item
+            .trim()
+            .toLowerCase();
 
         if (seen.has(normalized)) {
           return false;
@@ -863,62 +1005,6 @@ Return JSON only.
         return true;
       });
     };
-
-
-    const allowedCategories = [
-      "education",
-      "experience",
-      "training",
-      "project",
-      "skills",
-      "professional_interest",
-      "strength",
-      "closing"
-    ];
-
-
-    const oldCategories =
-      Array.isArray(
-        state.sessionMemory.completedCategories
-      )
-        ? state.sessionMemory.completedCategories
-        : [];
-
-
-    const newCategories =
-      Array.isArray(
-        updatedMemory.completedCategories
-      )
-        ? updatedMemory.completedCategories
-        : [];
-
-
-    const completedCategories =
-      uniqueItems([
-        ...oldCategories,
-        ...newCategories
-      ]).filter(category =>
-        allowedCategories.includes(category)
-      );
-
-
-    const interviewOrder = [
-      "education",
-      "experience",
-      "training",
-      "project",
-      "skills",
-      "professional_interest",
-      "strength",
-      "closing"
-    ];
-
-
-    const nextIncomplete =
-      interviewOrder.find(
-        category =>
-          !completedCategories.includes(category)
-      ) || "complete";
 
 
     state.sessionMemory = {
@@ -950,11 +1036,15 @@ Return JSON only.
             : [])
         ]),
 
-      completedCategories,
-
       currentStep:
-        nextIncomplete
+        updatedMemory.currentStep ||
+        state.sessionMemory.currentStep ||
+        ""
     };
+    console.log(
+      "SESSION MEMORY:",
+      JSON.stringify(state.sessionMemory, null, 2)
+    );
 
 
     console.log(
@@ -1489,7 +1579,7 @@ async function askQwen(messages) {
       },
 
       temperature: 0.15,
-      max_tokens: 300
+      max_tokens: 180
     };
 
     const retryResponse =
@@ -1535,6 +1625,7 @@ async function askQwen(messages) {
 function startSession() {
   state.turns = 0;
   state.messages = [];
+  state.pendingRetry = null;
 
   state.sessionMemory = {
     goal: "",
@@ -1766,6 +1857,7 @@ $("#composer").addEventListener(
     try {
 
       let result;
+      let memoryUpdated = false;
       const deterministic =checkDeterministicCorrection(text);
 
       if (deterministic.hasCorrection) {
@@ -1780,35 +1872,50 @@ $("#composer").addEventListener(
         };
       }
       if (!result && state.pendingRetry) {
-          const normalize = value =>
-            value
-              .trim()
-              .replace(/[.!?]+$/g, "")
-              .replace(/\s+/g, " ")
-              .toLowerCase();
 
-          const userRetry =
-            normalize(text);
+        const normalize = value =>
+          value
+            .trim()
+            .replace(/[.!?]+$/g, "")
+            .replace(/\s+/g, " ")
+            .toLowerCase();
 
-          const expectedRetry =
-            normalize(state.pendingRetry.expected);
+        const userRetry =
+          normalize(text);
 
-          if (userRetry === expectedRetry) {
-            state.pendingRetry = null;
+        const expectedRetry =
+          normalize(state.pendingRetry.expected);
 
-            result = await askQwen([
-              ...state.messages,
-              {
-                role: "system",
-                content:
-                  "The learner has successfully completed the requested correction. " +
-                  "Briefly confirm this, then continue to ONE new learning point. " +
-                  "Do not repeat the corrected point. " +
-                  "For A1, explain in Arabic and give one short English template before asking the learner to try."
-              }
-            ]);
-          }
+        if (userRetry === expectedRetry) {
+
+          // The correction has been completed successfully.
+          state.pendingRetry = null;
+
+          // Update memory BEFORE asking the coach what comes next.
+          // This allows the coach to see that the current
+          // learning point has already been completed.
+          markCurrentStepAsPracticed();
+          await updateSessionMemory(
+            state.messages
+          );
+          memoryUpdated = true;
+
+          result = await askQwen([
+            ...state.messages,
+
+            {
+              role: "system",
+
+              content:
+                "The learner has successfully completed the requested correction. " +
+                "Use the updated SESSION MEMORY before choosing what comes next. " +
+                "Briefly confirm the successful retry, then continue to ONE new useful learning point. " +
+                "Do not repeat a learning point that has already been practiced. " +
+                "For A1, explain in Arabic and give one short English template before asking the learner to try."
+            }
+          ]);
         }
+      }
 
       // ============================
       // DETECT ENGLISH PRACTICE
@@ -1853,95 +1960,119 @@ $("#composer").addEventListener(
         text.includes("?");
 
 
-        // ============================
-    // LANGUAGE EVALUATION
-    // ============================
+       // ============================
+// LANGUAGE EVALUATION
+// ============================
 
-    if (
-      !result &&
-      hasEnglish &&
-      looksLikeEnglishSentence &&
-      !looksLikeQuestionOrRequest
-    ) {
+if (
+  !result &&
+  hasEnglish &&
+  looksLikeEnglishSentence &&
+  !looksLikeQuestionOrRequest
+) {
 
-      const evaluation =
-        await checkEnglishAttempt(text);
-
-      // ----------------------------
-      // REAL GRAMMAR ERROR
-      // ----------------------------
-
-      if (
-        evaluation?.status === "grammar_error"
-      ) {
-
-        state.pendingRetry = {
-          expected: evaluation.corrected,
-          type: "grammar"
-        };
-
-        result = {
-          stage: "CORRECTION",
-
-          text:
-            `فيه تعديل بسيط على الجملة.\n\n` +
-            (
-              evaluation.explanation
-                ? `${evaluation.explanation}\n\n`
-                : ""
-            ) +
-            `الصحيح:\n${evaluation.corrected}\n\n` +
-            `جربي تكتبينها مرة ثانية.`
-        };
-      }
+  const evaluation =
+    await checkEnglishAttempt(text);
 
 
-      // ----------------------------
-      // USEFUL WORDING IMPROVEMENT
-      // ----------------------------
+  // ----------------------------
+  // REAL GRAMMAR ERROR
+  // ----------------------------
 
-      else if (
-        evaluation?.status === "wording_improvement"
-      ) {
+  if (
+    evaluation?.status === "grammar_error"
+  ) {
 
-        state.pendingRetry = {
-          expected: evaluation.corrected,
-          type: "wording"
-        };
+    state.pendingRetry = {
+      expected: evaluation.corrected,
+      type: "grammar"
+    };
 
-        result = {
-          stage: "CORRECTION",
+    result = {
+      stage: "CORRECTION",
 
-          text:
-            `جملتك صحيحة، لكن فيه صياغة أنسب لهذا السياق.\n\n` +
-            (
-              evaluation.explanation
-                ? `${evaluation.explanation}\n\n`
-                : ""
-            ) +
-            `الأفضل:\n${evaluation.corrected}\n\n` +
-            `جربي تكتبينها مرة ثانية.`
-        };
-      }
-
-    }
+      text:
+        `فيه تعديل بسيط على الجملة.\n\n` +
+        (
+          evaluation.explanation
+            ? `${evaluation.explanation}\n\n`
+            : ""
+        ) +
+        `الصحيح:\n${evaluation.corrected}\n\n` +
+        `جربي تكتبينها مرة ثانية.`
+    };
+  }
 
 
-  
+  // ----------------------------
+  // USEFUL WORDING IMPROVEMENT
+  // ----------------------------
+
+  else if (
+    evaluation?.status === "wording_improvement"
+  ) {
+
+    state.pendingRetry = {
+      expected: evaluation.corrected,
+      type: "wording"
+    };
+
+    result = {
+      stage: "CORRECTION",
+
+      text:
+        `جملتك صحيحة، لكن فيه صياغة أنسب لهذا السياق.\n\n` +
+        (
+          evaluation.explanation
+            ? `${evaluation.explanation}\n\n`
+            : ""
+        ) +
+        `الأفضل:\n${evaluation.corrected}\n\n` +
+        `جربي تكتبينها مرة ثانية.`
+    };
+  }
 
 
-    // ============================
-    // NORMAL LANGUAGE COACH
-    // ============================
+  // ----------------------------
+  // CORRECT ANSWER
+  // ----------------------------
 
-    if (!result) {
+  else if (
+    evaluation?.status === "correct"
+  ) {
 
-      result =
-        await askQwen(
-          state.messages
-        );
+    // The learner successfully completed
+    // the current learning point.
+    // Update memory BEFORE choosing
+    // the next learning point.
 
-    }
+    markCurrentStepAsPracticed();
+    await updateSessionMemory(
+      state.messages
+    );
+    memoryUpdated = true;
+
+    result =
+      await askQwen(
+        state.messages
+      );
+  }
+
+}
+
+
+// ============================
+// NORMAL LANGUAGE COACH
+// ============================
+
+if (!result) {
+
+  result =
+    await askQwen(
+      state.messages
+    );
+
+}
       // ============================
       // DISPLAY RESPONSE
       // ============================
@@ -1970,10 +2101,13 @@ $("#composer").addEventListener(
       // This prevents the coach from asking again
       // about information the learner just provided.
 
+   if (!memoryUpdated) {
+
       await updateSessionMemory(
         state.messages
       );
 
+    }
 
       // ============================
       // UPDATE LESSON FLOW
